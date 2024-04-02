@@ -1,0 +1,11 @@
+<div *ngFor="let problem of problems; let i = index">
+  <div>
+    {{ problem.operand1 }} {{ problem.operator }} {{ problem.operand2 }} =
+    <input type="number" [(ngModel)]="problem.userAnswer"><br>
+    <span [ngStyle]="{'color': problem.message === 'Correct answer' ? 'green' : 'red'}">{{ problem.message }}</span><br>
+  </div>
+</div>
+<button (click)="checkAnswers()" class="btn btn-primary">Check Answer</button>
+<button (click)="generateAndReset()" class="btn btn-success">Generate Problems</button>
+<hr>
+
